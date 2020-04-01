@@ -1,0 +1,8 @@
+C:\Users\Raniel\source\repos\Fiap.Ipark\IPark.Domain\bin\Debug\netcoreapp3.1\IPark.Domain.deps.json
+C:\Users\Raniel\source\repos\Fiap.Ipark\IPark.Domain\bin\Debug\netcoreapp3.1\IPark.Domain.dll
+C:\Users\Raniel\source\repos\Fiap.Ipark\IPark.Domain\bin\Debug\netcoreapp3.1\IPark.Domain.pdb
+C:\Users\Raniel\source\repos\Fiap.Ipark\IPark.Domain\obj\Debug\netcoreapp3.1\IPark.Domain.csproj.CoreCompileInputs.cache
+C:\Users\Raniel\source\repos\Fiap.Ipark\IPark.Domain\obj\Debug\netcoreapp3.1\IPark.Domain.AssemblyInfoInputs.cache
+C:\Users\Raniel\source\repos\Fiap.Ipark\IPark.Domain\obj\Debug\netcoreapp3.1\IPark.Domain.AssemblyInfo.cs
+C:\Users\Raniel\source\repos\Fiap.Ipark\IPark.Domain\obj\Debug\netcoreapp3.1\IPark.Domain.dll
+C:\Users\Raniel\source\repos\Fiap.Ipark\IPark.Domain\obj\Debug\netcoreapp3.1\IPark.Domain.pdb

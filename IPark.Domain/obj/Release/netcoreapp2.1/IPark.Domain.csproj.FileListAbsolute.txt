@@ -1,0 +1,9 @@
+C:\Users\Raniel\source\repos\Fiap.Ipark\IPark.Domain\bin\Release\netcoreapp2.1\IPark.Domain.deps.json
+C:\Users\Raniel\source\repos\Fiap.Ipark\IPark.Domain\bin\Release\netcoreapp2.1\IPark.Domain.dll
+C:\Users\Raniel\source\repos\Fiap.Ipark\IPark.Domain\bin\Release\netcoreapp2.1\IPark.Domain.pdb
+C:\Users\Raniel\source\repos\Fiap.Ipark\IPark.Domain\obj\Release\netcoreapp2.1\IPark.Domain.csprojAssemblyReference.cache
+C:\Users\Raniel\source\repos\Fiap.Ipark\IPark.Domain\obj\Release\netcoreapp2.1\IPark.Domain.csproj.CoreCompileInputs.cache
+C:\Users\Raniel\source\repos\Fiap.Ipark\IPark.Domain\obj\Release\netcoreapp2.1\IPark.Domain.AssemblyInfoInputs.cache
+C:\Users\Raniel\source\repos\Fiap.Ipark\IPark.Domain\obj\Release\netcoreapp2.1\IPark.Domain.AssemblyInfo.cs
+C:\Users\Raniel\source\repos\Fiap.Ipark\IPark.Domain\obj\Release\netcoreapp2.1\IPark.Domain.dll
+C:\Users\Raniel\source\repos\Fiap.Ipark\IPark.Domain\obj\Release\netcoreapp2.1\IPark.Domain.pdb

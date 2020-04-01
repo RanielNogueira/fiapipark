@@ -1,0 +1,12 @@
+C:\Users\Raniel\source\repos\Fiap.Ipark\IPark.Service\obj\Debug\netcoreapp2.1\IPark.Service.csprojAssemblyReference.cache
+C:\Users\Raniel\source\repos\Fiap.Ipark\IPark.Service\obj\Debug\netcoreapp2.1\IPark.Service.csproj.CoreCompileInputs.cache
+C:\Users\Raniel\source\repos\Fiap.Ipark\IPark.Service\obj\Debug\netcoreapp2.1\IPark.Service.AssemblyInfoInputs.cache
+C:\Users\Raniel\source\repos\Fiap.Ipark\IPark.Service\obj\Debug\netcoreapp2.1\IPark.Service.AssemblyInfo.cs
+C:\Users\Raniel\source\repos\Fiap.Ipark\IPark.Service\bin\Debug\netcoreapp2.1\IPark.Service.deps.json
+C:\Users\Raniel\source\repos\Fiap.Ipark\IPark.Service\bin\Debug\netcoreapp2.1\IPark.Service.dll
+C:\Users\Raniel\source\repos\Fiap.Ipark\IPark.Service\bin\Debug\netcoreapp2.1\IPark.Domain.dll
+C:\Users\Raniel\source\repos\Fiap.Ipark\IPark.Service\bin\Debug\netcoreapp2.1\IPark.Domain.pdb
+C:\Users\Raniel\source\repos\Fiap.Ipark\IPark.Service\obj\Debug\netcoreapp2.1\IPark.Service.csproj.CopyComplete
+C:\Users\Raniel\source\repos\Fiap.Ipark\IPark.Service\bin\Debug\netcoreapp2.1\IPark.Service.pdb
+C:\Users\Raniel\source\repos\Fiap.Ipark\IPark.Service\obj\Debug\netcoreapp2.1\IPark.Service.dll
+C:\Users\Raniel\source\repos\Fiap.Ipark\IPark.Service\obj\Debug\netcoreapp2.1\IPark.Service.pdb
