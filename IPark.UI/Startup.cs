@@ -1,21 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Ipark.Service.Repository;
-using IPark.Domain;
+﻿using Ipark.Service.Repository;
 using IPark.Service.Data;
-using IPark.UI.Models;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Infrastructure;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
+using Newtonsoft.Json.Serialization;
+using Microsoft.Data.SqlClient;
 
 namespace IPark.UI
 {
@@ -36,13 +31,17 @@ namespace IPark.UI
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
 
+            var stringConnection = new SqlConnection(Configuration.GetConnectionString("connectionIPark"));
+            services.AddSingleton(stringConnection);
+
             services.AddDbContext<ParkContext>(
                     options => options.UseSqlServer(
                         Configuration.GetConnectionString("connectionIPark")));
 
             services.AddHttpContextAccessor();
             services.TryAddSingleton<IActionContextAccessor, ActionContextAccessor>();
-            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1)
+            .AddJsonOptions(options => options.SerializerSettings.ContractResolver = new DefaultContractResolver());
 
             services.AddScoped<Service.Interfaces.IAgendamentoRepository, AgendamentoRepository>();
             services.AddScoped<Service.Interfaces.IAgendaRepository, AgendaRepository>();

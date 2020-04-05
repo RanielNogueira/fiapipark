@@ -1,27 +1,28 @@
-﻿using IPark.Service.Data;
+﻿using Dapper;
+using IPark.Service.Data;
 using IPark.Service.Interfaces;
+using Microsoft.Data.SqlClient;
 using System;
 using System.Collections.Generic;
-using System.Data.SqlClient;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Ipark.Service.Repository
 {
     public class GenericRepository<T> : IGenericRepository<T> where T : class
     {
-        private readonly ParkContext _connection;
+        private readonly SqlConnection _connection;
+        private readonly ParkContext _context;
 
-        public GenericRepository(ParkContext connection) {
-            this._connection = connection;
+        public GenericRepository(ParkContext context, SqlConnection connection) {
+            _context = context;
+            _connection = connection;
         }
 
         public virtual void Delete(int id)
         {
             try
             {
-                _connection.Remove(_connection.Find<T>(id));
-                _connection.SaveChanges();
+                _context.Remove(_context.Find<T>(id));
+                _context.SaveChanges();
             }
             catch (Exception)
             {
@@ -34,7 +35,7 @@ namespace Ipark.Service.Repository
         {
             try
             {
-                return _connection.Find<T>(id);
+                return _context.Find<T>(id);
             }
             catch (Exception)
             {
@@ -47,7 +48,7 @@ namespace Ipark.Service.Repository
         {
             try
             {
-                return _connection.Query<T>();
+                return _connection.GetList<T>();
             }
             catch (Exception)
             {
@@ -60,8 +61,8 @@ namespace Ipark.Service.Repository
         {
             try
             {
-                _connection.Add(t);
-                _connection.SaveChanges();
+                _context.Add(t);
+                _context.SaveChanges();
                 return t;
             }
             catch (Exception)
@@ -75,8 +76,8 @@ namespace Ipark.Service.Repository
         {
             try
             {
-                _connection.Update(t);
-                _connection.SaveChanges();
+                _context.Update(t);
+                _context.SaveChanges();
             }
             catch (Exception)
             {

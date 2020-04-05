@@ -6,11 +6,11 @@ using System.Text;
 
 namespace IPark.Domain
 {
-    public class PessoaEntity 
+    public abstract class PessoaEntity 
     {
         [Column("ds_cpf")]
         [MaxLength(11)]
-        public virtual long Cpf { get; set; }
+        public virtual string Cpf { get; set; }
 
         [Column("ds_nome")]
         [Required(AllowEmptyStrings = false)]

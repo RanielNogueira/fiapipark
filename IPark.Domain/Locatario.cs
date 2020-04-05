@@ -10,15 +10,17 @@ namespace IPark.Domain
     public class Locatario : PessoaEntity
     {
         [Key]
-        [Column("locatario_id_locatario")]
+        [Column("id_locatario")]
         public int idLocatario { get; set; }
 
         [MaxLength(14)]
-        [Column("cliente_ds_cnpj")]
+        [Column("ds_cnpj")]
         public string Cnpj { get; set; }
 
+        [NotMapped]
         public virtual IList<ClienteLocatario> clienteLocatario { get; set; }
 
+        [NotMapped]
         public virtual IList<Vaga> Vagas { get; set; }
     }
 }

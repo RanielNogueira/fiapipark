@@ -15,8 +15,4 @@
     <ProjectReference Include="..\IPark.Service\IPark.Service.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="wwwroot\lib\" />
-  </ItemGroup>
-
 </Project>

@@ -68,7 +68,7 @@ using IPark.UI.Models;
             WriteLiteral("\r\n    <ul class=\"navbar-nav bg-gradient-dark sidebar sidebar-dark toggled\" id=\"accordionSidebar\">\r\n\r\n        <!-- Sidebar - Brand -->\r\n        ");
             EndContext();
             BeginContext(172, 333, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "00f1ceaeff6046d280c811b4e25320f1", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "cf3dc66722f2459aa1eb2157ef60550e", async() => {
                 BeginContext(287, 214, true);
                 WriteLiteral("\r\n            <div class=\"sidebar-brand-icon rotate-n-15\">\r\n                <i class=\"fas fa-parking\"></i>\r\n            </div>\r\n            <div class=\"sidebar-brand-text mx-3\">IPark <sup>FIAP</sup></div>\r\n        ");
                 EndContext();
@@ -93,7 +93,7 @@ using IPark.UI.Models;
             WriteLiteral("\r\n\r\n        <!-- Divider -->\r\n        <hr class=\"sidebar-divider my-0\">\r\n\r\n        <!-- Nav Item - Dashboard -->\r\n        <li class=\"nav-item\">\r\n            ");
             EndContext();
             BeginContext(662, 180, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3bc66bec957e433ca3f843a6d327b966", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "c1249d001deb4ae6b5de9f3ad21d0f68", async() => {
                 BeginContext(723, 115, true);
                 WriteLiteral("\r\n                <i class=\"fas fa-fw fa-tachometer-alt\"></i>\r\n                <span>Dashboard</span>\r\n            ");
                 EndContext();
@@ -118,7 +118,7 @@ using IPark.UI.Models;
             WriteLiteral("\r\n        </li>\r\n\r\n\r\n        <!-- Nav Item - Charts -->\r\n        <li class=\"nav-item\">\r\n            ");
             EndContext();
             BeginContext(942, 159, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "2541f1362ef94a5aa7e5eea97cc87457", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3279dc1c3f5c4651b071fd38dc6ec26d", async() => {
                 BeginContext(989, 108, true);
                 WriteLiteral("\r\n                <i class=\"far fa-address-card\"></i>\r\n                <span>Locatários</span>\r\n            ");
                 EndContext();
@@ -141,7 +141,7 @@ using IPark.UI.Models;
             WriteLiteral("\r\n        </li>\r\n\r\n        <!-- Nav Item - Charts -->\r\n        <li class=\"nav-item\">\r\n            ");
             EndContext();
             BeginContext(1199, 153, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "60d6780397a04b17901ca23a3b58b7a1", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "1170910a705248fcb4be0bc50836d64a", async() => {
                 BeginContext(1244, 104, true);
                 WriteLiteral("\r\n                <i class=\"fas fa-fw fa-user\"></i>\r\n                <span>Clientes</span>\r\n            ");
                 EndContext();

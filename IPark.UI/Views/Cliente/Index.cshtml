@@ -3,35 +3,88 @@
     ViewData["Title"] = "Clientes";
 }
 
-<h2>@ViewData["Title"]</h2>
-
-<div class="card shadow mb-4" ng-app="app">
-    <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+<div class="card shadow" ng-app="app" ng-controller="clienteController">
+    <div class="card-header py-2 d-flex flex-row align-items-center justify-content-between">
         <h6 class="m-0 font-weight-bold text-primary">Lista de Clientes</h6>
         <div class="dropdown no-arrow show">
-            <button class="btn btn-sm btn-outline-primary">
+            <button class="btn btn-sm btn-outline-primary" ng-click="novo()">
                 <i class="fas fa-plus-circle"></i> Novo
             </button>
         </div>
     </div>
     <div class="card-body">
-        <table class="table table-hover table-sm">
+        <table class="table table-hover table-sm" datatable="ng" dt-options="dtOptions">
             <thead>
                 <tr>
                     <th style="width:5% !important">Cod</th>
-                    <th style="width:50% !important">Nome</th>
+                    <th style="width:30% !important">Nome</th>
                     <th>CPF</th>
-                    <th style="width:10% !important"></th>
+                    <th>E-mail</th>
+                    <th style="width:20% !important"></th>
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>1</td>
-                    <td>Cliente 1</td>
-                    <td>111.222.000-00</td>
-                    <td><button class="btn btn-sm btn-info btn-xs"><i class="fas fa-edit"></i> Editar</button></td>
+                <tr ng-repeat="item in clientes">
+                    <td>{{item.idCliente}}</td>
+                    <td>{{item.Nome}}</td>
+                    <td>{{item.Email}}</td>
+                    <td>{{item.Cpf}}</td>
+                    <td>
+                        <button ng-click="editar(item,formCliente)" class="btn btn-sm btn-info btn-xs"><i class="fas fa-edit"></i> Editar</button>
+                        <button ng-click="remover(item.idCliente)" class="btn btn-sm btn-danger btn-xs"><i class="fas fa-times-circle"></i> Remover</button>
+                    </td>
                 </tr>
             </tbody>
         </table>
     </div>
+
+    <div class="modal" tabindex="-1" role="dialog" id="modalCliente">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Novo cliente</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <form name="formCliente" id="formCliente" ng-submit="salvar(cliente)">
+                    <div class="modal-body">
+
+                        <div class="form-row">
+                            <div class="col-6">
+                                <label>Nome</label>
+                                <input name="nome" ng-model="cliente.Nome" required ng-class="!formCliente.nome.$dirty ? 'form-control' : (formCliente.nome.$dirty && formCliente.nome.$valid ? 'form-control is-valid' : 'form-control is-invalid')" autocomplete="off" id="nome" class="form-control" />
+                            </div>
+                            <div class="col-6">
+                                <label>E-mail</label>
+                                <input type="email" ng-model="cliente.Email" autocomplete="off" name="email" id="email" class="form-control" required ng-class="!formCliente.email.$dirty ? 'form-control' : (formCliente.email.$dirty && formCliente.email.$valid ? 'form-control is-valid' : 'form-control is-invalid')" />
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="col-3">
+                                <label>Telefone</label>
+                                <input name="telefone" mask="(99)99999-9999" ng-model="cliente.Telefone" autocomplete="off" id="telefone" class="form-control" required ng-class="!formCliente.telefone.$dirty ? 'form-control' : (formCliente.telefone.$dirty && formCliente.telefone.$valid ? 'form-control is-valid' : 'form-control is-invalid')"/>
+                            </div>
+                            <div class="col-3">
+                                <label>CPF</label>
+                                <input type="text" ng-model="cliente.Cpf" autocomplete="off" mask="999.999.999-99" name="cpf" id="cpf" class="form-control" required ng-class="!formCliente.cpf.$dirty ? 'form-control' : (formCliente.cpf.$dirty && formCliente.cpf.$valid ? 'form-control is-valid' : 'form-control is-invalid')" />
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                        <button type="submit" class="btn btn-success"><span class="fas fa-check-circle"></span> Salvar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
 </div>
+
+@section scripts{
+    <script src="~/lib/angular-resource/angular-resource.js"></script>
+    <script src="~/lib/angular-mask/ngMask.min.js"></script>
+    <script src="~/app/controller/cliente.controller.js"></script>
+
+}
