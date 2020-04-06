@@ -1,4 +1,4 @@
-﻿var app = angular.module("app", ['ngMask', 'ngResource','datatables']);
+﻿var app = angular.module("app", ['ngMask', 'ngResource', 'datatables']);
 
 app.controller("locatarioController", ($scope, $http, DTOptionsBuilder) => {
 
@@ -39,10 +39,38 @@ app.controller("locatarioController", ($scope, $http, DTOptionsBuilder) => {
     $scope.dtOptions = DTOptionsBuilder.newOptions()
         .withPaginationType('full_numbers').withDisplayLength(5).withLanguage(lang);
 
+    $scope.tipoLocatario = true;
+
     $scope.novo = () => {
-        $scope.resetForm();
-        $("#modalLocatario").modal("show");
-        $("#nome").focus();
+
+        Swal.fire({
+            title: 'Você é uma empresa ou uma pessoa?',
+            type: 'question',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Sou uma Empresa',
+            cancelButtonText: 'Sou uma Pessoa'
+        }).then((result) => {
+
+
+            if (result) {
+                if (result.value) {
+                    $scope.resetForm();
+                    $("#modalLocatario").modal("show");
+                    $("#nome").focus();
+                    $scope.tipoLocatario = false;
+                }
+                else {
+                    $scope.resetForm();
+                    $("#modalLocatario").modal("show");
+                    $("#nome").focus();
+                    $scope.tipoLocatario = true;
+                }
+            }
+        })
+
+  
     }
 
     $scope.remover = (id) => {
@@ -68,10 +96,11 @@ app.controller("locatarioController", ($scope, $http, DTOptionsBuilder) => {
 
     $scope.editar = (locatario, form) => {
 
-
-
         $("#modalLocatario").modal("show");
         $scope.locatario = angular.copy(locatario);
+
+        $scope.tipoLocatario = ($scope.locatario.Cpf ? true : false);
+        console.log($scope.tipoLocatario)
         $scope.formValidate(form);
     }
 
@@ -109,8 +138,8 @@ app.controller("locatarioController", ($scope, $http, DTOptionsBuilder) => {
 
         var _locatario = angular.copy(locatario);
 
-        _locatario.Cpf = _locatario.Cpf.replace(".", "").replace(".", "").replace("-","")
-        _locatario.Telefone = _locatario.Telefone.replace("(", "").replace(")", "").replace("-", "")
+        //_locatario.Cpf = _locatario.Cpf.replace(".", "").replace(".", "").replace("-","")
+        //_locatario.Telefone = _locatario.Telefone.replace("(", "").replace(")", "").replace("-", "")
 
         console.log(_locatario);
 

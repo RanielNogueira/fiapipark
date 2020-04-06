@@ -27,11 +27,14 @@
                 <tr ng-repeat="item in clientes">
                     <td>{{item.idCliente}}</td>
                     <td>{{item.Nome}}</td>
-                    <td>{{item.Email}}</td>
+
                     <td>{{item.Cpf}}</td>
+                    <td>{{item.Email}}</td>
                     <td>
-                        <button ng-click="editar(item,formCliente)" class="btn btn-sm btn-info btn-xs"><i class="fas fa-edit"></i> Editar</button>
-                        <button ng-click="remover(item.idCliente)" class="btn btn-sm btn-danger btn-xs"><i class="fas fa-times-circle"></i> Remover</button>
+                        <div class="btn-group" role="group">
+                            <button ng-click="editar(item,formCliente)" class="btn btn-sm btn-info btn-xs"><i class="fas fa-edit"></i> Editar</button>
+                            <button ng-click="remover(item.idCliente)" class="btn btn-sm btn-danger btn-xs"><i class="fas fa-times-circle"></i> Remover</button>
+                        </div>
                     </td>
                 </tr>
             </tbody>
