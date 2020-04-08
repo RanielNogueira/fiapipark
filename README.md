@@ -10,6 +10,15 @@ Descompacte a solução e execute o projeto IPark.UI
 pressiona F5 e rode o programa.
 ```
 
+## Aplicação em produção
+http://iparkfiap.azurewebsites.net/
+
+Para ter acesso ao admin do sistema utilize as credenciais abaixo,
+
+E-mail => admin@ipark.com.br
+Senha  => fiap123
+
+
 ## Banco de dados
 
 O banco de dados utilizado foi o SQL Server 2019 em nuvem Azure.
