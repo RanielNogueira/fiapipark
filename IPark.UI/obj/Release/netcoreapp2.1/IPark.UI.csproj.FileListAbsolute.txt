@@ -41,3 +41,4 @@ C:\Users\Raniel\source\repos\Fiap.Ipark\IPark.UI\obj\Release\netcoreapp2.1\IPark
 C:\Users\Raniel\source\repos\Fiap.Ipark\IPark.UI\obj\Release\netcoreapp2.1\IPark.UI.dll
 C:\Users\Raniel\source\repos\Fiap.Ipark\IPark.UI\obj\Release\netcoreapp2.1\IPark.UI.pdb
 C:\Users\Raniel\source\repos\Fiap.Ipark\IPark.UI\obj\Release\netcoreapp2.1\IPark.UI.genruntimeconfig.cache
+C:\Users\Raniel\source\repos\Fiap.Ipark\IPark.UI\obj\Release\netcoreapp2.1\Razor\Views\Login\Index.cshtml.g.cs

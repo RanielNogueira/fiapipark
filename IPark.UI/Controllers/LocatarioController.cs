@@ -1,10 +1,14 @@
 ﻿using System;
 using IPark.Domain;
 using IPark.Service.Interfaces;
+using IPark.UI.Filters;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace IPark.UI.Controllers
 {
+    [LoginFilter]
+    [Authorize]
     public class LocatarioController : Controller
     {
         public readonly ILocatarioRepository repoLocatario;

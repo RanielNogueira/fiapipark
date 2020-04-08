@@ -11,6 +11,9 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
 using Newtonsoft.Json.Serialization;
 using Microsoft.Data.SqlClient;
+using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Localization;
+using System.Globalization;
 
 namespace IPark.UI
 {
@@ -38,21 +41,38 @@ namespace IPark.UI
                     options => options.UseSqlServer(
                         Configuration.GetConnectionString("connectionIPark")));
 
-            services.AddHttpContextAccessor();
-            services.TryAddSingleton<IActionContextAccessor, ActionContextAccessor>();
-            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1)
-            .AddJsonOptions(options => options.SerializerSettings.ContractResolver = new DefaultContractResolver());
-
             services.AddScoped<Service.Interfaces.IAgendamentoRepository, AgendamentoRepository>();
             services.AddScoped<Service.Interfaces.IAgendaRepository, AgendaRepository>();
             services.AddScoped<Service.Interfaces.IClienteLocatarioRepository, ClienteLocatarioRepository>();
             services.AddScoped<Service.Interfaces.IClienteRepository, ClienteRepository>();
             services.AddScoped<Service.Interfaces.ILocatarioRepository, LocatarioRepository>();
             services.AddScoped<Service.Interfaces.IVagaRepository, VagaRepository>();
+
+            services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
+             .AddCookie(options =>
+             {
+                 options.LoginPath = "/Login/Index";
+                 options.LogoutPath = "/Login/Index";
+
+             });
+
+            services.AddHttpContextAccessor();
+            services.TryAddSingleton<IActionContextAccessor, ActionContextAccessor>();
+            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1)
+            .AddJsonOptions(options => options.SerializerSettings.ContractResolver = new DefaultContractResolver());
+
         }
 
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
+            var supportedCultures = new[] { new CultureInfo("pt-BR") };
+            app.UseRequestLocalization(new RequestLocalizationOptions
+            {
+                DefaultRequestCulture = new RequestCulture(culture: "pt-BR", uiCulture: "pt-BR"),
+                SupportedCultures = supportedCultures,
+                SupportedUICultures = supportedCultures
+            });
+
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
@@ -65,6 +85,7 @@ namespace IPark.UI
 
             app.UseHttpsRedirection();
             app.UseStaticFiles();
+            app.UseAuthentication();
             app.UseCookiePolicy();
 
             app.UseMvc(routes =>

@@ -8,9 +8,13 @@ using IPark.UI.Models;
 using IPark.Service.Interfaces;
 using IPark.Domain;
 using IPark.Service.Data;
+using Microsoft.AspNetCore.Authorization;
+using IPark.UI.Filters;
 
 namespace IPark.UI.Controllers
 {
+    [LoginFilter]
+    [Authorize]
     public class HomeController : Controller
     {
         private readonly IClienteRepository repo;

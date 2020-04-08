@@ -5,10 +5,14 @@ using System.Threading.Tasks;
 using IPark.Domain;
 using IPark.Service.Data;
 using IPark.Service.Interfaces;
+using IPark.UI.Filters;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace IPark.UI.Controllers
 {
+    [LoginFilter]
+    [Authorize]
     public class ClienteController : Controller
     {
         public readonly IClienteRepository repoCliente;
